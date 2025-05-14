@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José María Arguedas: Voz de los sin voz - La discriminación racial en el Perú</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8c3610;
+            --secondary-color: #d9a566;
+            --text-color: #333;
+            --background-color: #f8f4e8;
+            --accent-color: #4c7c3b;
+            --light-accent: #e8f4e0;
+            --dark-accent: #395d2c;
+            --quote-bg: #f9eeda;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles with Parallax Effect */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/800') center/cover no-repeat fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        
+        .hero h1::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 15px auto;
+        }
+        
+        .author {
+            font-style: italic;
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+        }
+        
+        .area {
+            display: inline-block;
+            background-color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            color: white;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        h3 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        /* Keywords Box */
+        .keywords {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-style: italic;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .keywords::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        
+        .keywords strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Books Section */
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .book {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            border-top: 5px solid var(--accent-color);
+        }
+        
+        .book:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .book h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+        
+        .book-cover {
+            width: 100%;
+            height: 180px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Quote Styling */
+        .quote {
+            font-style: italic;
+            color: var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+            background-color: var(--quote-bg);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+            position: absolute;
+            top: -15px;
+            left: 10px;
+        }
+        
+        /* Interactive Timeline */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            background: var(--secondary-color);
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+        }
+        
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+            width: 50%;
+            padding: 0 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            border-width: 10px 0 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            border-width: 10px 10px 10px 0;
+            border-style: solid;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-image {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 10 / 4; /* Fuerza formato horizontal echado */
+            object-fit: cover;
+            display: block;
+            margin: 1rem auto 0 auto; /* centrada debajo del texto */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Conclusion Section */
+        .conclusion {
+            background: linear-gradient(to right, var(--light-accent), white);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            border-left: 6px solid var(--accent-color);
+        }
+        
+        .conclusion::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--light-accent) 20%, transparent 70%);
+            opacity: 0.5;
+        }
+        
+        /* Interactive Elements */
+        .didyouknow {
+            background-color: #f0f8ff;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            border-left: 6px solid #4a90e2;
+            position: relative;
+        }
+        
+        .didyouknow::before {
+            content: "¿Sabías que?";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background-color: #4a90e2;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .interactive-quiz {
+            background-color: #fff8e1;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2.5rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quiz-question {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .quiz-option {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .quiz-option:hover {
+            background-color: var(--light-accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive iframe for video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        /* Call To Action Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-accent));
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            margin: 3rem 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta h2::after {
+            background: white;
+            width: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to right, var(--primary-color), var(--dark-accent));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                left: 0 !important;
+                text-align: left !important;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after {
+                left: -10px;
+                right: auto;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .author {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 0.5rem;
+            }
+            
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>José María Arguedas: La voz de los sin voz</h1>
+            <p class="author">Investigación por: Danier Sammir Contreras Irene</p>
+            <div class="area">Área de Comunicación</div>
+        </div>
+        <a href="#problema" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Jose María Arguedas</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#problema">Problema</a></li>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#antecedentes">Antecedentes</a></li>
+                <li><a href="#obras">Obras</a></li>
+                <li><a href="#conclusiones">Conclusiones</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- Problem Statement Section -->
+        <section id="problema">
+            <h2>Planteamiento del problema</h2>
+            <p>En el Perú, desde la época colonial hasta la actualidad, las comunidades indígenas han sido víctimas de una discriminación sistemática basada en su origen étnico, idioma y tradiciones culturales. Este problema sociohistórico ha generado profundas heridas en nuestra identidad nacional y mantiene vigentes estructuras de desigualdad.</p>
+            
+            <p>José María Arguedas, escritor y antropólogo peruano, no solo documentó esta realidad, sino que la vivió en carne propia al crecer entre dos mundos: el indígena y el occidental. Su experiencia personal y su obra literaria nos ofrecen una ventana única para comprender la complejidad del racismo en el Perú.</p>
+            
+            <div class="didyouknow">
+                <p>José María Arguedas fue criado por sirvientes indígenas después de que su madrastra lo maltratara. Esto le permitió aprender quechua como lengua materna y comprender desde adentro la cosmovisión andina, convirtiéndose en un "puente cultural" entre dos mundos que parecían irreconciliables.</p>
+            </div>
+            
+            <p>Esta investigación explora cómo la obra de Arguedas refleja y denuncia la discriminación racial, y por qué su mensaje sigue siendo relevante en la sociedad peruana contemporánea. Nos preguntamos: <strong>¿De qué manera las obras de José María Arguedas revelan las estructuras de discriminación racial en el Perú? ¿Qué estrategias narrativas y lingüísticas utiliza para visibilizar esta problemática? ¿Por qué su mensaje sigue siendo relevante en la actualidad?</strong></p>
+            
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="index/arguedas.png" alt="José María Arguedas, escritor peruano" class="gallery-image">
+                    <div class="gallery-caption">José María Arguedas (1911-1969), escritor, antropólogo y etnólogo peruano.</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="index/paisaje.png" alt="Paisaje andino del Perú" class="gallery-image">
+                    <div class="gallery-caption">Paisaje andino de la sierra peruana, escenario principal de las obras de Arguedas.</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Introduction Section -->
+        <section id="introduccion">
+            <h2>Introducción</h2>
+            <p>La discriminación racial en el Perú es un fenómeno complejo arraigado en nuestra historia desde la conquista española. Se manifiesta en actitudes, prácticas y estructuras sociales que privilegian lo occidental y marginan lo indígena, creando una jerarquía étnica que persiste hasta nuestros días.</p>
+            
+            <p>José María Arguedas (1911-1969) ocupa un lugar único en la literatura peruana por su capacidad de narrar esta realidad desde una posición privilegiada: la de alguien que vivió entre dos mundos. Como hijo de un abogado blanco pero criado entre comunidades quechuas, Arguedas experimentó la división cultural del Perú no como un observador externo, sino como parte integral de su identidad.</p>
+            
+            <p>Su obra trasciende lo meramente literario para convertirse en un poderoso testimonio antropológico y en una denuncia social. A través de sus novelas, cuentos y ensayos, Arguedas no solo documenta la discriminación racial, sino que propone un proyecto nacional integrador donde todas las culturas que conforman el Perú puedan coexistir en condiciones de igualdad.</p>
+            
+            <div class="keywords">
+                <strong>Palabras clave:</strong> discriminación racial, identidad peruana, literatura indigenista, José María Arguedas, interculturalidad, quechua, mestizaje cultural, cosmovisión andina.
+            </div>
+            
+<div class="video-container">
+    <!-- Video educativo sobre Arguedas -->
+    <iframe 
+        src="https://www.youtube.com/embed/6kkTuCIbamM" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+</div>
+        </section>
+        
+        <!-- Background Section -->
+        <section id="antecedentes">
+            <h2>Antecedentes históricos y sociales</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1532</span>
+                        <h3>Conquista española</h3>                       
+                        <p>La llegada de los españoles establece un sistema colonial basado en la jerarquización racial, donde lo indígena es subordinado.</p>
+                        <img src="timeline/conquista.png" alt="Llegada de los españoles" class="timeline-image">
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1821</span>
+                        <h3>Independencia del Perú</h3>
+                        <p>La independencia no significó un cambio sustancial en la condición de los pueblos indígenas, que siguieron marginados.</p>
+                        <img src="timeline/indenpendencia.png" alt="Independencia del Perú" class="timeline-image">
+                    </div>
+                </div>
+                s
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1911</span>
+                        <h3>Nacimiento de Arguedas</h3>
+                        <p>José María Arguedas nace en Andahuaylas, en un Perú profundamente dividido entre el mundo andino y occidental.</p>
+                        <img src="timeline/nacimiento.png" alt="Nacimiento de Arguedas" class="timeline-image">
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1928</span>
+                        <h3>Indigenismo</h3>
+                        <p>Surge con fuerza el movimiento indigenista en la literatura y las artes, buscando reivindicar al indígena.</p>
+                        <img src="timeline/indigenismo.png" alt="Movimiento indigenismo" class="timeline-image">
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1935</span>
+                        <h3>Primeros escritos</h3>
+                        <p>Arguedas publica "Agua", su primer libro de cuentos, donde ya muestra su preocupación por la discriminación.</p>
+                        <img src="timeline/primeros_escritos.png" alt="Primeros escritos de Arguedas" class="timeline-image">
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1941</span>
+                        <h3>Yawar Fiesta</h3>
+                        <p>Publica su primera novela, donde retrata el conflicto cultural entre lo andino y lo occidental.</p>
+                        <img src="timeline/yawar.png" alt="Yawar Fiestas" class="timeline-image">"
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1958</span>
+                        <h3>Los ríos profundos</h3>
+                        <p>Su obra maestra, donde la discriminación racial se convierte en un eje central de la narración.</p>
+                        <img src="timeline/rios.png" alt="Los ríos profundos" class="timeline-image">
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1969</span>
+                        <h3>Fallecimiento</h3>
+                        <p>Arguedas se suicida, dejando inconclusa "El zorro de arriba y el zorro de abajo", obra que explora la migración andina a la costa.</p>
+                        <img src="timeline/fallecimiento.png" alt="Fallecimiento de Arguedas" class="timeline-image">
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Contexto social en la obra de Arguedas</h3>
+            <p>La obra de Arguedas se desarrolla en un Perú marcado por profundas desigualdades sociales donde los indígenas y sus descendientes ocupaban los estratos más bajos de la sociedad. Este sistema discriminatorio se manifestaba en múltiples formas:</p>
+            
+            <ul>
+                <li>Exclusión política y económica de las comunidades indígenas</li>
+                <li>Desprecio hacia las lenguas originarias, especialmente el quechua</li>
+                <li>Explotación laboral en haciendas y minas</li>
+                <li>Negación de la riqueza cultural andina</li>
+                <li>Imposición de modelos educativos occidentales</li>
+            </ul>
+            
+            <div class="quote">
+                "No soy un aculturado; yo soy un peruano que orgullosamente, como un demonio feliz, habla en cristiano y en indio, en español y en quechua."
+                <span>— José María Arguedas, Discurso al recibir el premio Inca Garcilaso de la Vega (1968)</span>
+            </div>
+            
+            <p>Este contexto sociohistórico es fundamental para comprender la obra arguediana, que no puede entenderse como simple ficción sino como un reflejo y análisis de las estructuras de discriminación que han marcado la historia peruana.</p>
+        </section>
+        
+        <!-- Works Section -->
+        <section id="obras">
+            <h2>La discriminación racial en las obras de Arguedas</h2>
+            
+            <p>A través de su extensa obra literaria, Arguedas aborda la discriminación racial desde diferentes ángulos y con variadas estrategias narrativas. Sus textos no solo denuncian esta realidad sino que buscan tender puentes entre culturas.</p>
+            
+            <div class="books-container">
+                <div class="book">
+                    <img src="portadas/portada_yawar.png" alt="Portada de Yawar Fiesta" class="book-cover">
+                    <h3>Yawar Fiesta (1941)</h3>
+                    <p>En su primera novela, Arguedas contrasta las visiones del mundo andino y occidental a través de la corrida de toros, una celebración donde ambas culturas se encuentran y confrontan. La discriminación se manifiesta en las actitudes de las autoridades y mistis (blancos) hacia los indígenas.</p>
+                    <p><strong>Estrategia narrativa:</strong> Uso del multiperspectivismo para mostrar las diferentes visiones sobre una misma realidad.</p>
+                </div>
+                
+                <div class="book">
+                    <img src="portadas/portada_losrios.png" alt="Portada de Los ríos profundos" class="book-cover">
+                    <h3>Los ríos profundos (1958)</h3>
+                    <p>Su obra más reconocida narra la historia de Ernesto, un niño que experimenta la discriminación desde su posición entre dos mundos. El internado religioso donde estudia se convierte en un microcosmos de las jerarquías raciales del Perú.</p>
+                    <p><strong>Estrategia narrativa:</strong> Uso de la perspectiva infantil para desnaturalizar las estructuras discriminatorias.</p>
+                </div>
+                
+                <div class="book">
+                    <img src="portadas/portada_todaslassangres.jpg" alt="Portada de Todas las sangres" class="book-cover">
+                    <h3>Todas las sangres (1964)</h3>
+                    <p>Esta novela presenta un amplio panorama social del Perú, donde las tensiones raciales se entrelazan con conflictos económicos y políticos. La llegada del capitalismo intensifica la discriminación pero también abre posibilidades de transformación social.</p>
+                    <p><strong>Estrategia narrativa:</strong> Construcción de personajes simbólicos que representan diferentes posturas ante la discriminación.</p>
+                </div>
+            </div>
+            
+            <h3>Estrategias lingüísticas</h3>
+            <p>Uno de los aspectos más innovadores de la obra de Arguedas es su lenguaje. Como bilingüe quechua-español, desarrolló un estilo literario único que refleja las tensiones culturales y lingüísticas del Perú:</p>
+            
+            <ul>
+                <li><strong>Quechuización del español:</strong> Incorpora estructuras sintácticas y ritmos del quechua en su prosa española.</li>
+                <li><strong>Inclusión de términos quechuas:</strong> Introduce palabras y expresiones quechuas sin traducción, obligando al lector hispano a confrontar la alteridad lingüística.</li>
+                <li><strong>Oralidad andina:</strong> Recrea el habla de los personajes indígenas no como una versión deficiente del español, sino como una modalidad cultural propia.</li>
+                <li><strong>Descripciones sensoriales:</strong> Utiliza un lenguaje rico en sonidos, colores y texturas para transmitir la experiencia sensorial andina.</li>
+            </ul>
+            
+            <div class="quote">
+                "Este es un vencido que no acepta su derrota. Un acriollado que no ha perdido el alma indígena. Un peruano que representa la síntesis viviente y sangrienta de lo indígena vivo y lo occidental asimilado."
+                <span>— Mario Vargas Llosa sobre José María Arguedas</span>
+            </div>
+            
+            <div class="interactive-quiz">
+                <p class="quiz-question">¿Cuál de las siguientes obras de Arguedas aborda la migración andina hacia las ciudades costeras?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Los ríos profundos</div>
+                    <div class="quiz-option" data-correct="false">Yawar Fiesta</div>
+                    <div class="quiz-option" data-correct="true">El zorro de arriba y el zorro de abajo</div>
+                    <div class="quiz-option" data-correct="false">Diamantes y pedernales</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Legacy and Relevance Section -->
+        <section id="legado">
+            <h2>Legado y vigencia</h2>
+            
+            <p>Más de cincuenta años después de su muerte, la obra de Arguedas sigue siendo profundamente relevante para entender y combatir la discriminación racial en el Perú contemporáneo:</p>
+            
+            <h3>Problemáticas actuales reflejadas en su obra</h3>
+            <ul>
+                <li><strong>Racismo cotidiano:</strong> Las expresiones discriminatorias que aparecen en sus novelas siguen presentes en el lenguaje cotidiano peruano ("cholo", "serrano", etc.).</li>
+                <li><strong>Centralismo limeño:</strong> La división entre Lima y las provincias, especialmente andinas, continúa reproduciendo patrones de exclusión.</li>
+                <li><strong>Discriminación lingüística:</strong> El desprecio hacia las lenguas originarias persiste, a pesar de los avances en la educación intercultural bilingüe.</li>
+                <li><strong>Extractivismo vs. cosmovisión andina:</strong> Los conflictos socioambientales actuales reflejan el choque entre visiones del mundo que Arguedas ya anticipaba.</li>
+            </ul>
+            
+            <div class="didyouknow">
+                <p>En el Perú actual, el 60% de la población se autoidentifica como mestiza y el 25% como indígena. Sin embargo, estudios demuestran que las personas con rasgos indígenas tienen menor acceso a empleos bien remunerados y enfrentan mayores obstáculos en el sistema educativo.</p>
+            </div>
+            
+            <h3>Aportes a la construcción de una sociedad intercultural</h3>
+            <p>Arguedas propuso un proyecto nacional inclusivo que sigue siendo una aspiración para el Perú:</p>
+            
+            <ul>
+                <li>Reconocimiento del valor de todas las culturas que conforman la nación peruana</li>
+                <li>Diálogo horizontal entre tradiciones culturales diferentes</li>
+                <li>Preservación de las lenguas originarias como repositorios de conocimiento</li>
+                <li>Integración sin asimilación forzada</li>
+                <li>Educación que respete y valorice la diversidad cultural</li>
+            </ul>
+            
+            <div class="quote">
+                "Yo no soy un aculturado; yo soy un peruano que orgullosamente, como un demonio feliz, habla en cristiano y en indio, en español y en quechua. Deseaba convertir esa realidad en lenguaje artístico y tal parece, según cierto consenso más o menos general, que lo he conseguido."
+                <span>— José María Arguedas</span>
+            </div>
+        </section>
+        
+        <!-- Conclusions Section -->
+        <section id="conclusiones">
+            <h2>Conclusiones</h2>
+            
+            <div class="conclusion">
+                <p>La obra de José María Arguedas constituye un valioso testimonio sobre la discriminación racial en el Perú que trasciende lo meramente literario para convertirse en un documento antropológico y en una propuesta política. A través de estrategias narrativas y lingüísticas innovadoras, Arguedas logró visibilizar las estructuras discriminatorias que han marcado la historia peruana desde la conquista española hasta nuestros días.</p>
+                
+                <p>Su visión de un Perú intercultural, donde todas las tradiciones culturales puedan coexistir en igualdad de condiciones, sigue siendo un proyecto inconcluso. Los problemas que denunció —el racismo, la discriminación lingüística, la exclusión económica de las poblaciones indígenas— persisten en diversas formas en la sociedad peruana actual.</p>
+                
+                <p>Sin embargo, su legado nos ofrece herramientas para comprender y enfrentar estos desafíos. Arguedas nos muestra que es posible construir puentes entre mundos aparentemente irreconciliables, como él mismo lo hizo a través de su vida y su obra. Su mensaje central sigue resonando con fuerza: la verdadera identidad peruana no puede construirse negando o subordinando ninguna de sus raíces culturales, sino a través de un diálogo respetuoso entre todas ellas.</p>
+                
+                <p>En un mundo cada vez más consciente de la importancia de la diversidad cultural, la obra de Arguedas adquiere renovada relevancia como un ejemplo pionero de literatura intercultural que no solo denuncia la discriminación sino que propone caminos para superarla.</p>
+            </div>
+            
+            <div class="interactive-quiz">
+                <p class="quiz-question">¿Cuál considerarías que es el principal aporte de José María Arguedas a la comprensión de la discriminación racial en el Perú?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">Su análisis de las estructuras económicas que sustentan la discriminación</div>
+                    <div class="quiz-option">Su representación del conflicto cultural desde una experiencia vivida</div>
+                    <div class="quiz-option">Su innovación lingüística que integra el quechua y el español</div>
+                    <div class="quiz-option">Su propuesta de un proyecto nacional intercultural</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action Section -->
+        <section class="cta">
+            <h2>Descubre más sobre José María Arguedas</h2>
+            <p>Explora la riqueza literaria y el legado cultural de uno de los escritores más importantes de América Latina.</p>
+            <a href="https://es.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Arguedas" class="cta-button">Leer sus obras completas</a>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre el autor</h3>
+                <p>Este trabajo de investigación fue realizado por Danier Sammir Contreras Irene para el área de Comunicación.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/direct/inbox/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces útiles</h3>
+                <ul class="footer-links">
+                    <li><a href="#problema">Planteamiento del problema</a></li>
+                    <li><a href="#introduccion">Introducción</a></li>
+                    <li><a href="#antecedentes">Antecedentes</a></li>
+                    <li><a href="#obras">Obras</a></li>
+                    <li><a href="#conclusiones">Conclusiones</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Referencias</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Biblioteca Nacional del Perú</a></li>
+                    <li><a href="#">Casa de la Literatura Peruana</a></li>
+                    <li><a href="#">Archivo José María Arguedas</a></li>
+                    <li><a href="#">Ministerio de Cultura</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 - Todos los derechos reservados. Trabajo académico con fines educativos.</p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Show/Hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollBtn = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top functionality
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Simple quiz functionality
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.style.backgroundColor = '';
+                    opt.style.transform = '';
+                });
+                
+                if (this.getAttribute('data-correct') === 'true') {
+                    this.style.backgroundColor = '#dff0d8';
+                    this.style.borderLeft = '4px solid #5cb85c';
+                } else {
+                    this.style.backgroundColor = '#f2dede';
+                    this.style.borderLeft = '4px solid #d9534f';
+                    
+                    // Highlight correct answer
+                    const correctOption = parent.querySelector('[data-correct="true"]');
+                    correctOption.style.backgroundColor = '#dff0d8';
+                    correctOption.style.borderLeft = '4px solid #5cb85c';
+                }
+            });
+        });
+        
+        // Gallery image click for simplified lightbox effect
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
